@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#edf6fd;color:#001e2d;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* 3D Glass & Lighting Utilities */
+.card-3d-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 249, 255, 0.82) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 36px -12px rgba(0, 100, 127, 0.16), 0 2px 8px 0 rgba(0, 100, 127, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 2px 0 rgba(0, 100, 127, 0.04);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.card-3d-glass:hover, .card-3d-glass:active {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 24px 44px -10px rgba(0, 100, 127, 0.24), 0 4px 12px 0 rgba(0, 100, 127, 0.08), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+.hero-3d-wrap {
+  perspective: 1200px;
+}
+.hero-3d-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  box-shadow: 0 28px 50px -15px rgba(0, 80, 105, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+.hero-3d-card:hover {
+  transform: rotateX(2deg) rotateY(-2deg) translateY(-5px);
+  box-shadow: 0 36px 65px -16px rgba(0, 80, 105, 0.42), 0 0 0 1.5px rgba(255, 255, 255, 0.8) inset;
+}
+.btn-3d-primary {
+  background: linear-gradient(135deg, #007fa0 0%, #005a73 100%);
+  box-shadow: 0 12px 24px -6px rgba(0, 100, 127, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4), inset 0 -2px 0 0 rgba(0, 31, 41, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-3d-primary:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 6px 14px -4px rgba(0, 100, 127, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+.btn-3d-secondary {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(222, 240, 255, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px -6px rgba(0, 100, 127, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-3d-secondary:active {
+  transform: translateY(2px) scale(0.98);
+}
+.glow-orb {
+  filter: blur(55px);
+  pointer-events: none;
+  border-radius: 9999px;
+  position: absolute;
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.05); }
+}
+.animate-float-subtle {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+.animate-glow-pill {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#eaf5ff", "tertiary-fixed-dim": "#8dcfed", "secondary-fixed-dim": "#61d6eb", "on-error": "#ffffff", "primary-fixed-dim": "#74d2f8", "on-primary": "#ffffff", "surface-container-highest": "#c5e7ff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "secondary-container": "#77eaff", "background": "#edf6fd", "surface-dim": "#bddff7", "on-secondary-fixed-variant": "#004e59", "outline": "#6e797e", "tertiary-container": "#377c97", "surface-tint": "#006782", "tertiary": "#14637e", "on-primary-container": "#fbfdff", "on-background": "#001e2d", "surface-bright": "#f5faff", "inverse-primary": "#74d2f8", "primary": "#00647f", "surface-container-high": "#d2ecff", "on-primary-fixed": "#001f29", "surface": "#edf6fd", "surface-variant": "#c5e7ff", "inverse-on-surface": "#e4f3ff", "on-surface": "#001e2d", "outline-variant": "#bec8ce", "on-primary-fixed-variant": "#004d63", "on-secondary-fixed": "#001f24", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-secondary-container": "#006977", "inverse-surface": "#0f3447", "tertiary-fixed": "#bce9ff", "primary-container": "#007fa0", "error": "#ba1a1a", "on-tertiary-container": "#fbfdff", "on-tertiary-fixed": "#001f2a", "on-tertiary-fixed-variant": "#004d63", "on-tertiary": "#ffffff", "secondary-fixed": "#9fefff", "on-surface-variant": "#3e484d", "primary-fixed": "#bbe9ff", "secondary": "#006876", "surface-container": "#def0ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-lg": "1.5rem", "space-3xl": "4rem", "gutter-sm": "1rem", "gutter-lg": "2rem", "margin": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-md": "1rem", "gutter": "1.5rem", "space-xs": "0.5rem", "space-2xl": "3rem" }, fontFamily: { "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "title-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "caption": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}], "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600"}] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-container relative overflow-x-hidden" style="background: radial-gradient(120% 70% at 50% -10%, #cceeff 0%, #e3f2fd 35%, #edf6fd 70%, #f4faff 100%);"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,100,127,0.06)] border-b border-white/60"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="SmileCare Logo" class="h-8 w-auto object-contain drop-shadow-sm" src="../assets/logo.svg"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-primary tracking-tight font-bold">SmileCare</span><span class="font-caption text-caption text-on-surface-variant hidden sm:inline">Dental Clinic</span></div></div><div class="flex items-center gap-space-xs"><a aria-label="Emergency Dental Call" class="min-h-[44px] min-w-[44px] px-space-sm bg-gradient-to-r from-red-500/15 to-rose-500/20 text-error border border-red-200/60 shadow-sm rounded-full flex items-center gap-space-2xs font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-transform" href="tel:18007645322"><span class="material-symbols-outlined text-[18px]">call</span><span class="hidden xs:inline">SOS</span></a><button aria-label="Open Menu" class="min-h-[44px] min-w-[44px] p-space-2xs text-on-surface-variant hover:text-on-surface flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">menu</span></button><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlmsDq_G2YMMJjF8XfNv1CLgQIpKAx-ZlvLviD-KrlkujYWXqKQ2WBMHo0EgN9d1qjoxVfiX-j8X-wQVZKYrMfmnRREt4QhL6GB_RLcxhgyYLxMaYLbboqC20HZIkZ39pbsNUkHBuGLWWefURl5aSV1Y-KpoEJd_mFrSIMnueM8OdgtXZNmBVPGDuooj-yZlCWT3Q8LeBJAKBwaLxHaQ8VmxkNOAasuGbwUDm3Ld7l"/><span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></span></div></div></div></header><main class="flex-1 w-full pt-16 pb-24 flex flex-col relative"><div class="flex flex-col w-full relative z-10">
+<!-- Dynamic Atmospheric Glow Orbs (Background 3D Depth) -->
+<div class="glow-orb w-72 h-72 bg-cyan-300/35 top-12 -left-20 animate-glow-pill"></div>
+<div class="glow-orb w-80 h-80 bg-sky-400/25 top-64 -right-24"></div>
+<div class="glow-orb w-96 h-96 bg-teal-300/20 top-[600px] left-10"></div>
+<div class="glow-orb w-80 h-80 bg-blue-400/20 top-[1100px] -right-20"></div>
+<!-- Hero Section -->
+<section class="relative px-space-md pt-space-md pb-space-lg flex flex-col gap-space-lg">
+<!-- Gentle clinic announcement badge with 3D Pill styling -->
+<div class="self-start inline-flex items-center gap-space-2xs px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 text-primary shadow-[0_8px_20px_-6px_rgba(0,100,127,0.18)]">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_#006876] animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-bold tracking-wide">Welcoming New Patients Today</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight font-extrabold drop-shadow-[0_2px_4px_rgba(0,30,45,0.06)]">
+        Your Smile, <span class="bg-gradient-to-r from-primary via-cyan-600 to-secondary bg-clip-text text-transparent">Our Priority</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant font-normal leading-relaxed">
+        Experience world-class, gentle dental care in a state-of-the-art clinic. From routine cleanings to complete smile makeovers.
+      </p>
+</div>
+<!-- Hero Image & Ambient Clinical Overlays with 3D Card Depth -->
+<div class="hero-3d-wrap w-full">
+<div class="hero-3d-card relative w-full aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-surface-container-low to-surface-container border border-white/70">
+<img alt="SmileCare Lead Dentist" class="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlmsDq_G2YMMJjF8XfNv1CLgQIpKAx-ZlvLviD-KrlkujYWXqKQ2WBMHo0EgN9d1qjoxVfiX-j8X-wQVZKYrMfmnRREt4QhL6GB_RLcxhgyYLxMaYLbboqC20HZIkZ39pbsNUkHBuGLWWefURl5aSV1Y-KpoEJd_mFrSIMnueM8OdgtXZNmBVPGDuooj-yZlCWT3Q8LeBJAKBwaLxHaQ8VmxkNOAasuGbwUDm3Ld7l"/>
+<!-- Soft Gradient Vignette & Radial Light Specular -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/75 via-on-surface/15 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-white/30 pointer-events-none"></div>
+<!-- Floating Achievement Pill Top Right with 3D Float -->
+<div class="animate-float-subtle absolute top-3.5 right-3.5 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_10px_25px_-5px_rgba(0,0,0,0.25)] border border-white flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-500 text-[18px] drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-extrabold">4.9/5</span>
+<span class="font-caption text-caption text-on-surface-variant font-medium">(2.4k+ reviews)</span>
+</div>
+<!-- Floating Clinical Excellence Badge Bottom Left with 3D Specular Frost -->
+<div class="absolute bottom-3.5 left-3.5 right-3.5 bg-white/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-[0_16px_32px_-8px_rgba(0,40,60,0.3)] border border-white flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-secondary-container to-cyan-100 flex items-center justify-center text-on-secondary-container shrink-0 shadow-inner border border-white/60">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">15+ Years Clinical Excellence</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Certified ADA Specialist Team</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Actions CTA Buttons with 3D Extrusion -->
+<div class="flex flex-col gap-space-xs pt-space-2xs">
+<a class="btn-3d-primary w-full min-h-[52px] px-space-xl py-space-sm rounded-full text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-xs cursor-pointer font-bold tracking-wide" data-path="appointment" href="../appointment_booking/code.html">
+<span>Book Appointment</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="btn-3d-secondary w-full min-h-[50px] px-space-xl py-space-sm rounded-full text-primary font-label-md text-label-md flex items-center justify-center gap-space-xs cursor-pointer font-bold tracking-wide" data-path="services" href="../services/code.html">
+<span class="material-symbols-outlined text-[20px]">dentistry</span>
+<span>Explore Services</span>
+</a>
+</div>
+</section>
+<!-- Quick Trust Indicators & Statistics Grid - Enhanced 3D Glass Dashboard -->
+<section class="px-space-md py-space-xs">
+<div class="relative p-1 rounded-3xl bg-gradient-to-br from-white/90 via-white/50 to-cyan-100/40 shadow-[0_20px_40px_-15px_rgba(0,100,127,0.18)] border border-white/80 backdrop-blur-xl">
+<div class="grid grid-cols-2 gap-2.5 p-2 bg-gradient-to-b from-white/80 to-surface-container-low/60 rounded-[22px]">
+<!-- Stat 1 -->
+<div class="card-3d-glass flex flex-col p-3 rounded-2xl relative overflow-hidden group">
+<div class="absolute -right-2 -bottom-2 w-14 h-14 rounded-full bg-cyan-400/10 blur-md pointer-events-none"></div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface tracking-tight">15k+</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Happy Patients</span>
+</div>
+<!-- Stat 2 -->
+<div class="card-3d-glass flex flex-col p-3 rounded-2xl relative overflow-hidden group">
+<div class="absolute -right-2 -bottom-2 w-14 h-14 rounded-full bg-cyan-400/10 blur-md pointer-events-none"></div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[18px]">medical_information</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface tracking-tight">25+</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Specialist Doctors</span>
+</div>
+<!-- Stat 3 -->
+<div class="card-3d-glass flex flex-col p-3 rounded-2xl relative overflow-hidden group">
+<div class="absolute -right-2 -bottom-2 w-14 h-14 rounded-full bg-secondary/10 blur-md pointer-events-none"></div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="w-7 h-7 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-[18px]">health_and_safety</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface tracking-tight">99.4%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Success Rate</span>
+</div>
+<!-- Stat 4 -->
+<div class="card-3d-glass flex flex-col p-3 rounded-2xl relative overflow-hidden group">
+<div class="absolute -right-2 -bottom-2 w-14 h-14 rounded-full bg-primary/10 blur-md pointer-events-none"></div>
+<div class="flex items-center gap-1.5 mb-1">
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface tracking-tight">0%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Financing Options</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Dental Services - 3D Dashboard Cards Stack -->
+<section class="px-space-md py-space-lg flex flex-col gap-space-md">
+<div class="flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Specialized Care</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Featured Treatments</h2>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-0.5 pb-0.5 group" data-path="services" href="#">
+<span class="group-hover:underline">View all</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</a>
+</div>
+<!-- Service Cards Stack with 3D Bevel & Specular Highlights -->
+<div class="flex flex-col gap-space-sm">
+<!-- Service 1: Teeth Whitening -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-md cursor-pointer">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-secondary-container flex items-center justify-center text-on-secondary-container shrink-0 shadow-[0_6px_14px_-2px_rgba(0,105,119,0.35)] border border-white/60">
+<span class="material-symbols-outlined text-[26px]">flare</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Teeth Whitening</h3>
+<span class="px-2 py-0.5 bg-gradient-to-r from-surface-container-high to-cyan-100 text-primary border border-primary/20 rounded-full font-caption text-caption font-bold shrink-0 shadow-sm">Laser Gentle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            In-clinic laser illumination lifting up to 8 shades in a single comfortable 45-minute session.
+          </p>
+</div>
+</div>
+<!-- Service 2: Dental Implants -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-md cursor-pointer">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary-fixed to-sky-300 flex items-center justify-center text-primary shrink-0 shadow-[0_6px_14px_-2px_rgba(0,100,127,0.3)] border border-white/60">
+<span class="material-symbols-outlined text-[26px]">play_apps</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Dental Implants</h3>
+<span class="px-2 py-0.5 bg-gradient-to-r from-surface-container-high to-cyan-100 text-primary border border-primary/20 rounded-full font-caption text-caption font-bold shrink-0 shadow-sm">Lifetime Care</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Precision titanium and zirconia implants seamlessly integrated with 3D guided surgical tech.
+          </p>
+</div>
+</div>
+<!-- Service 3: Orthodontics & Clear Aligners -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-md cursor-pointer">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-secondary-container flex items-center justify-center text-on-secondary-container shrink-0 shadow-[0_6px_14px_-2px_rgba(0,105,119,0.35)] border border-white/60">
+<span class="material-symbols-outlined text-[26px]">dentistry</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Clear Aligners</h3>
+<span class="px-2 py-0.5 bg-gradient-to-r from-surface-container-high to-cyan-100 text-primary border border-primary/20 rounded-full font-caption text-caption font-bold shrink-0 shadow-sm">Discreet</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Nearly invisible custom aligner series crafted from digital iTero scans for ideal alignment.
+          </p>
+</div>
+</div>
+<!-- Service 4: Root Canal Treatment -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-md cursor-pointer">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-tertiary-fixed to-blue-200 flex items-center justify-center text-tertiary shrink-0 shadow-[0_6px_14px_-2px_rgba(20,99,126,0.3)] border border-white/60">
+<span class="material-symbols-outlined text-[26px]">healing</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Root Canal Therapy</h3>
+<span class="px-2 py-0.5 bg-gradient-to-r from-surface-container-high to-cyan-100 text-primary border border-primary/20 rounded-full font-caption text-caption font-bold shrink-0 shadow-sm">Painless Tech</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            High-magnification microscopic endodontics engineered for zero pain and natural tooth preservation.
+          </p>
+</div>
+</div>
+</div>
+<!-- Link to all treatments -->
+<a class="btn-3d-secondary w-full py-space-sm rounded-2xl text-center font-label-md text-label-md text-primary font-bold flex items-center justify-center gap-1.5 shadow-sm" data-path="services" href="#">
+<span>View All 8+ Treatments</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</section>
+<!-- Visual Clinic Highlight Strip with 3D Depth Card -->
+<section class="px-space-md py-space-xs">
+<div class="relative w-full h-52 rounded-3xl overflow-hidden shadow-[0_20px_45px_-12px_rgba(0,60,85,0.4)] border border-white/80 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern serene dental clinic treatment room interior with ultra-ergonomic teal patient chair, ambient natural lighting from expansive glass windows, cutting edge digital monitors, minimalist white cabinetry and soothing indoor wellness greenery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA7GM1sjyZZM3gtH3AEJ5LXLr3hmmw36PM4RGDEAGSEuCXUvV84hLbu3uuXQy71CCw37iU-WD95BZHWMuxXjCrRd4wJVsF7FlyD5f8GcC9K5BASPgnAApPCanQzbkUwimpqMTHUCcOnSPraRic7WaiFvjJceXUqW5zRbk9DYseaCGq0XlIsroUjOjLZbRjF-2P48ZBR3aNzIx4rxOwNjuL1lPwd_QTeWS5uY8LWbrC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent flex flex-col justify-end p-space-md text-surface">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-cyan-300 animate-ping"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed font-extrabold tracking-wider uppercase drop-shadow-sm">Patient First Architecture</span>
+</div>
+<p class="font-title-sm text-title-sm text-surface-bright mt-0.5 font-bold tracking-tight">Anxiety-Free, Soundproof Suites</p>
+<span class="font-caption text-caption text-surface-container-high/90">Equipped with noise-canceling headphones &amp; ceiling Netflix entertainment.</span>
+</div>
+</div>
+</section>
+<!-- "Why Choose Us" Value Props in 3D Glass Surface -->
+<section class="px-space-md py-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">The SmileCare Advantage</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Why Patients Trust Us</h2>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Prop 1 -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-cyan-100/60 flex items-center justify-center text-primary shrink-0 shadow-inner border border-primary/10">
+<span class="material-symbols-outlined text-[22px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Modern Painless Tech</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+            Low-radiation 3D cone-beam computed tomography, gentle airflow cleaning, and computer-controlled local anesthesia.
+          </p>
+</div>
+</div>
+<!-- Prop 2 -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-cyan-100/60 flex items-center justify-center text-primary shrink-0 shadow-inner border border-primary/10">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Certified Specialists</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+            Board-certified prosthodontists, periodontists, and maxillofacial surgeons offering peer-reviewed excellence.
+          </p>
+</div>
+</div>
+<!-- Prop 3 -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-cyan-100/60 flex items-center justify-center text-primary shrink-0 shadow-inner border border-primary/10">
+<span class="material-symbols-outlined text-[22px]">e911_emergency</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Emergency 24/7 Dental Support</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+            Acute toothache relief, broken crown emergency replacements, and trauma care available on call every single day.
+          </p>
+</div>
+</div>
+<!-- Prop 4 -->
+<div class="card-3d-glass p-space-md rounded-2xl flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-cyan-100/60 flex items-center justify-center text-primary shrink-0 shadow-inner border border-primary/10">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Transparent &amp; Easy Billing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+            Zero surprise fees. Direct in-network claims submission with major PPO health insurers and flexible monthly plans.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Patient Testimonial Showcase with 3D Frosted Glass -->
+<section class="px-space-md py-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Patient Voices</span>
+<div class="flex items-center gap-1 text-amber-500 bg-white/70 px-2.5 py-1 rounded-full border border-white/80 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Review Card with 3D Depth -->
+<div class="card-3d-glass p-space-lg rounded-3xl flex flex-col gap-space-md relative overflow-hidden">
+<!-- Decorative Quotation Watermark & Soft Accent Glow -->
+<span class="material-symbols-outlined absolute -bottom-4 -right-2 text-cyan-500/15 text-[120px] select-none pointer-events-none">
+        format_quote
+      </span>
+<p class="font-body-md text-body-md text-on-surface italic relative z-10 leading-relaxed font-medium">
+        “I spent ten years terrified of dentist chairs after a traumatic root canal elsewhere. Dr. Elena and the SmileCare team completely rewrote that memory. Zero pain, warm blankets, and my smile is restored beyond expectations!”
+      </p>
+<div class="flex items-center gap-space-sm relative z-10 pt-space-xs border-t border-cyan-100/60">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-primary/30 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up warm lifestyle portrait of a happy smiling woman in her early thirties with radiant natural white teeth outdoors in sunny morning light, natural skin tones and soft depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGggQkY59_cqzyqBRfz77SWoh2hVzmDg8vs_oZGzLTcIzxQt-BEcbiYAVQnMJy1_Pmfs6KOdCTXhHV5TIcR_i1cPo2w42PvpGuIM2SELH_GzBDPAwug6tsUPth47ARieKY5PTR6raLgZF0LssMpVW-haYtvLa1pT6HIz4v9YnpoJ_djMcap18OSmHTDU0-cJadkMoOPnBlyYhqU5NTQJrWO4kTaHSCnlb_6yiVhAxu"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Sarah Jenkins</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+            Full Arch Alignment • Verified Patient
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Urgent Care & Booking Call-To-Action Banner - 3D Gradient Shell -->
+<section class="px-space-md py-space-lg">
+<div class="relative bg-gradient-to-br from-primary via-[#007494] to-[#004e63] text-on-primary p-space-lg rounded-3xl shadow-[0_24px_50px_-12px_rgba(0,100,127,0.5)] border border-cyan-300/30 flex flex-col gap-space-md overflow-hidden">
+<!-- Ambient 3D Depth Elements inside Banner -->
+<div class="absolute -right-8 -bottom-8 w-48 h-48 rounded-full bg-cyan-300/30 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-teal-400/20 blur-xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-2xs relative z-10">
+<div class="self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 border border-white/25 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-bold">Your Transformation Awaits</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-extrabold mt-1">Ready for a Healthier, Brighter Smile?</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high/95 leading-relaxed">
+          Book your comprehensive dental checkup and digital scan online in under 2 minutes. Free consultation for aligners.
+        </p>
+</div>
+<div class="flex flex-col xs:flex-row gap-space-xs relative z-10 pt-1">
+<a class="w-full min-h-[50px] px-space-md py-space-sm bg-white text-primary rounded-full font-label-md text-label-md font-bold flex items-center justify-center gap-space-2xs shadow-[0_10px_25px_-5px_rgba(0,0,0,0.25)] hover:bg-cyan-50 active:scale-95 transition-all" data-path="appointment" href="../appointment_booking/code.html">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+<span>Schedule Online</span>
+</a>
+<a class="w-full min-h-[50px] px-space-md py-space-sm bg-white/15 text-white border border-white/30 backdrop-blur-md rounded-full font-label-md text-label-md font-bold flex items-center justify-center gap-space-2xs hover:bg-white/25 active:scale-95 transition-all" href="tel:18007645322">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>Call Support</span>
+</a>
+</div>
+</div>
+</section>
+</div><footer class="mt-space-2xl bg-surface-container-low/80 backdrop-blur-md border-t border-white/80 px-space-md py-space-xl flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="SmileCare Logo" class="h-7 w-auto object-contain" src="../assets/logo.svg"/><span class="font-title-sm text-title-sm text-primary font-bold">SmileCare Dental Clinic</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Gentle, comprehensive dental excellence designed around patient comfort and holistic oral health.</p></div><div class="grid grid-cols-1 gap-space-md"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px] mt-0.5">location_on</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Clinic Location</span><span class="font-body-sm text-body-sm text-on-surface-variant">452 Serene Harbor Blvd, Suite 200, Metro City</span></div></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px] mt-0.5">emergency</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">24/7 Dental Hotline</span><a class="font-body-sm text-body-sm text-primary font-bold hover:underline" href="tel:18007645322">+1 800-SMILE-CARE</a></div></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px] mt-0.5">schedule</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Operating Hours</span><span class="font-body-sm text-body-sm text-on-surface-variant">Mon – Fri: 8:00 AM – 7:00 PM</span><span class="font-body-sm text-body-sm text-on-surface-variant">Sat – Sun: 9:00 AM – 4:00 PM (Emergency on-call)</span></div></div></div><div class="flex flex-wrap items-center gap-space-xs pt-space-xs"><span class="px-space-sm py-1 bg-white/90 border border-white rounded-full font-label-sm text-label-sm text-on-surface-variant shadow-sm font-medium">ADA Accredited</span><span class="px-space-sm py-1 bg-white/90 border border-white rounded-full font-label-sm text-label-sm text-on-surface-variant shadow-sm font-medium">ISO 9001 Certified</span><span class="px-space-sm py-1 bg-white/90 border border-white rounded-full font-label-sm text-label-sm text-on-surface-variant shadow-sm font-medium">Laser Certified</span></div><div class="flex items-center justify-between pt-space-md border-t border-cyan-100/50"><span class="font-caption text-caption text-on-surface-variant">© 2024 SmileCare Clinic. All rights reserved.</span><div class="flex items-center gap-space-sm text-on-surface-variant"><a aria-label="Facebook" class="min-h-[44px] min-w-[44px] flex items-center justify-center hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a><a aria-label="Health Portal" class="min-h-[44px] min-w-[44px] flex items-center justify-center hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">verified</span></a></div></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/85 backdrop-blur-xl shadow-[0_-8px_25px_rgba(0,80,110,0.08)] border-t border-white/70" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-h-[44px] min-w-[44px] px-space-xs transition-colors text-primary font-bold" data-path="home" href="../home/code.html"><span class="material-symbols-outlined text-[22px] drop-shadow-sm">home</span><span class="font-caption text-caption">Home</span></a><a class="flex flex-col items-center justify-center min-h-[44px] min-w-[44px] px-space-xs text-on-surface-variant hover:text-primary transition-colors font-medium" data-path="services" href="../services/code.html"><span class="material-symbols-outlined text-[22px]">medical_services</span><span class="font-caption text-caption">Services</span></a><a aria-label="Book Appointment" class="flex flex-col items-center justify-center min-h-[44px] min-w-[44px] px-space-xs -mt-6 group" data-path="appointment" href="../appointment_booking/code.html"><div class="w-13 h-13 p-3 rounded-full bg-gradient-to-tr from-primary to-cyan-500 text-on-primary flex items-center justify-center shadow-[0_12px_24px_-4px_rgba(0,100,127,0.45)] border-2 border-white group-active:scale-95 transition-transform"><span class="material-symbols-outlined text-[24px]">calendar_month</span></div><span class="font-caption text-caption text-primary mt-1 font-bold">Book</span></a><a class="flex flex-col items-center justify-center min-h-[44px] min-w-[44px] px-space-xs text-on-surface-variant hover:text-primary transition-colors font-medium" data-path="experience" href="code.html"><span class="material-symbols-outlined text-[22px]">view_in_ar</span><span class="font-caption text-caption">3D Smile</span></a><a class="flex flex-col items-center justify-center min-h-[44px] min-w-[44px] px-space-xs text-on-surface-variant hover:text-primary transition-colors font-medium" data-path="contact" href="tel:18007645322"><span class="material-symbols-outlined text-[22px]">support_agent</span><span class="font-caption text-caption">Contact</span></a></div></nav></body></html>

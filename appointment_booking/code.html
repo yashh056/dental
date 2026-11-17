@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f5faff;color:#001e2d;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#eaf5ff", "tertiary-fixed-dim": "#8dcfed", "secondary-fixed-dim": "#61d6eb", "on-error": "#ffffff", "primary-fixed-dim": "#74d2f8", "on-primary": "#ffffff", "surface-container-highest": "#c5e7ff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "secondary-container": "#77eaff", "background": "#f5faff", "surface-dim": "#bddff7", "on-secondary-fixed-variant": "#004e59", "outline": "#6e797e", "tertiary-container": "#377c97", "surface-tint": "#006782", "tertiary": "#14637e", "on-primary-container": "#fbfdff", "on-background": "#001e2d", "surface-bright": "#f5faff", "inverse-primary": "#74d2f8", "primary": "#00647f", "surface-container-high": "#d2ecff", "on-primary-fixed": "#001f29", "surface": "#f5faff", "surface-variant": "#c5e7ff", "inverse-on-surface": "#e4f3ff", "on-surface": "#001e2d", "outline-variant": "#bec8ce", "on-primary-fixed-variant": "#004d63", "on-secondary-fixed": "#001f24", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-secondary-container": "#006977", "inverse-surface": "#0f3447", "tertiary-fixed": "#bce9ff", "primary-container": "#007fa0", "error": "#ba1a1a", "on-tertiary-container": "#fbfdff", "on-tertiary-fixed": "#001f2a", "on-tertiary-fixed-variant": "#004d63", "on-tertiary": "#ffffff", "secondary-fixed": "#9fefff", "on-surface-variant": "#3e484d", "primary-fixed": "#bbe9ff", "secondary": "#006876", "surface-container": "#def0ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-lg": "1.5rem", "space-3xl": "4rem", "gutter-sm": "1rem", "gutter-lg": "2rem", "margin": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-md": "1rem", "gutter": "1.5rem", "space-xs": "0.5rem", "space-2xl": "3rem" }, fontFamily: { "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "title-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "caption": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}], "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600"}] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(24,59,78,0.04)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="min-h-[44px] min-w-[44px] flex items-center justify-center text-on-surface hover:text-primary rounded-full hover:bg-surface-container-low transition-colors" onclick="window.history.length > 1 ? history.back() : window.location.href='../home/code.html'"><span class="material-symbols-outlined">arrow_back_ios_new</span></button><img alt="SmileCare Logo" class="h-8 w-auto object-contain" src="../assets/logo.svg"/><h1 class="font-title-sm text-title-sm text-on-surface tracking-tight truncate max-w-[140px] xs:max-w-[190px]">Appointment</h1></div><div class="flex items-center gap-space-xs"><a aria-label="Emergency Call" class="min-h-[44px] min-w-[44px] p-space-xs bg-error-container text-on-error-container rounded-full flex items-center justify-center hover:opacity-90 active:scale-95 transition-transform" href="tel:18007645322"><span class="material-symbols-outlined text-[20px]">call</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlmsDq_G2YMMJjF8XfNv1CLgQIpKAx-ZlvLviD-KrlkujYWXqKQ2WBMHo0EgN9d1qjoxVfiX-j8X-wQVZKYrMfmnRREt4QhL6GB_RLcxhgyYLxMaYLbboqC20HZIkZ39pbsNUkHBuGLWWefURl5aSV1Y-KpoEJd_mFrSIMnueM8OdgtXZNmBVPGDuooj-yZlCWT3Q8LeBJAKBwaLxHaQ8VmxkNOAasuGbwUDm3Ld7l"/></div></div></header><main class="flex-1 w-full pt-16 pb-safe bg-surface flex flex-col"><div class="flex flex-col w-full">
+<div class="px-space-md pt-space-md pb-space-xs">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-1 bg-surface-container rounded-full text-primary font-label-sm text-label-sm mb-space-xs shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      Real-Time Slot Availability
+    </div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Book Your Appointment</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Schedule your visit in less than 2 minutes. Instant confirmation and zero wait times.</p>
+</div>
+<div class="px-space-md my-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-title-sm text-title-sm">Step 1 of 2: Patient &amp; Treatment</span>
+<span class="text-secondary font-semibold">50% Complete</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-1/2 transition-all duration-500 ease-out"></div>
+</div>
+</div>
+</div>
+<form class="px-space-md py-space-sm flex flex-col gap-space-md" id="bookingForm" onsubmit="event.preventDefault();">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">person</span>
+        Patient Contact Information
+      </h3>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="fullName">Full Legal Name *</label>
+<div class="relative flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-[20px]">badge</span>
+<input class="w-full pl-10 pr-3 py-3 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none" id="fullName" placeholder="e.g. Jessica Montgomery" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="phoneNumber">Phone Number (SMS Reminders) *</label>
+<div class="relative flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<div class="flex items-center gap-1 pl-3 pr-2 border-r border-transparent">
+<span class="text-base leading-none">🇺🇸</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+1</span>
+</div>
+<input class="w-full pl-2 pr-3 py-3 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none" id="phoneNumber" placeholder="(555) 234-5678" required="" type="tel"/>
+<span class="material-symbols-outlined text-outline absolute right-3 pointer-events-none text-[20px]">smartphone</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="emailAddress">Email Address *</label>
+<div class="relative flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-[20px]">mail</span>
+<input class="w-full pl-10 pr-3 py-3 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none" id="emailAddress" placeholder="jessica.m@example.com" required="" type="email"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+        Doctor &amp; Dental Service
+      </h3>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="doctorSelect">Select Preferred Doctor</label>
+<div class="relative flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<div class="absolute left-3 w-7 h-7 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">group</span>
+</div>
+<select class="w-full pl-12 pr-10 py-3.5 bg-transparent text-on-surface font-body-md text-body-md appearance-none focus:outline-none" id="doctorSelect">
+<option value="any">Any Available Dental Specialist (Fastest Slot)</option>
+<option value="sarah-jenkins">Dr. Sarah Jenkins — Senior Orthodontist (12+ yrs)</option>
+<option value="michael-chang">Dr. Michael Chang — Prosthodontics &amp; Implants</option>
+<option value="elena-rodriguez">Dr. Elena Rodriguez — Cosmetic &amp; Restorative</option>
+<option value="marcus-vance">Dr. Marcus Vance — Oral Surgery &amp; Endodontics</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="serviceSelect">Reason for Visit / Treatment *</label>
+<div class="relative flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-[20px]">dentistry</span>
+<select class="w-full pl-10 pr-10 py-3.5 bg-transparent text-on-surface font-body-md text-body-md appearance-none focus:outline-none" id="serviceSelect" required="">
+<option disabled="" selected="" value="">Choose clinical service...</option>
+<option value="checkup">General Checkup &amp; Hygiene Clean</option>
+<option value="whitening">Laser Teeth Whitening</option>
+<option value="implants">Dental Implants Consultation</option>
+<option value="root-canal">Root Canal Therapy</option>
+<option value="orthodontics">Orthodontics &amp; Clear Aligners</option>
+<option value="cosmetic">Cosmetic Porcelain Veneers</option>
+<option value="pediatric">Pediatric Preventive Care</option>
+<option value="emergency">Emergency Toothache Examination</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+          Preferred Date &amp; Time
+        </h3>
+<span class="font-caption text-caption text-secondary uppercase font-semibold">OCTOBER 2024</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Select Day</label>
+<div class="flex gap-space-2xs overflow-x-auto pb-1" id="datePicker">
+<button class="date-chip shrink-0 py-2.5 px-3 rounded-lg flex flex-col items-center min-w-[70px] bg-primary text-on-primary shadow-sm transition-all" data-selected="true" onclick="selectDate(this)" type="button">
+<span class="font-caption text-caption opacity-90">Today</span>
+<span class="font-title-md text-title-md">24</span>
+<span class="font-caption text-caption opacity-90">Thu</span>
+</button>
+<button class="date-chip shrink-0 py-2.5 px-3 rounded-lg flex flex-col items-center min-w-[70px] bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-selected="false" onclick="selectDate(this)" type="button">
+<span class="font-caption text-caption text-on-surface-variant">Tomorrow</span>
+<span class="font-title-md text-title-md">25</span>
+<span class="font-caption text-caption text-on-surface-variant">Fri</span>
+</button>
+<button class="date-chip shrink-0 py-2.5 px-3 rounded-lg flex flex-col items-center min-w-[70px] bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-selected="false" onclick="selectDate(this)" type="button">
+<span class="font-caption text-caption text-on-surface-variant">Weekend</span>
+<span class="font-title-md text-title-md">26</span>
+<span class="font-caption text-caption text-on-surface-variant">Sat</span>
+</button>
+<button class="date-chip shrink-0 py-2.5 px-3 rounded-lg flex flex-col items-center min-w-[70px] bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-selected="false" onclick="selectDate(this)" type="button">
+<span class="font-caption text-caption text-on-surface-variant">Next Wk</span>
+<span class="font-title-md text-title-md">28</span>
+<span class="font-caption text-caption text-on-surface-variant">Mon</span>
+</button>
+<button class="date-chip shrink-0 py-2.5 px-3 rounded-lg flex flex-col items-center min-w-[70px] bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-selected="false" onclick="selectDate(this)" type="button">
+<span class="font-caption text-caption text-on-surface-variant">Next Wk</span>
+<span class="font-title-md text-title-md">29</span>
+<span class="font-caption text-caption text-on-surface-variant">Tue</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">light_mode</span> Morning Slots
+        </span>
+<div class="grid grid-cols-3 gap-2" id="morningSlots">
+<button class="time-slot py-2 px-1 text-center font-label-md text-label-md rounded-full bg-secondary-container text-on-secondary-container transition-all shadow-sm" onclick="selectTime(this)" type="button">09:00 AM</button>
+<button class="time-slot py-2 px-1 text-center font-label-md text-label-md rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">10:30 AM</button>
+<button class="time-slot py-2 px-1 text-center font-label-md text-label-md rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">11:15 AM</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">wb_twilight</span> Afternoon &amp; Evening
+        </span>
+<div class="grid grid-cols-4 gap-2" id="afternoonSlots">
+<button class="time-slot py-2 px-1 text-center font-label-sm text-label-sm rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">02:00 PM</button>
+<button class="time-slot py-2 px-1 text-center font-label-sm text-label-sm rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">03:30 PM</button>
+<button class="time-slot py-2 px-1 text-center font-label-sm text-label-sm rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">04:45 PM</button>
+<button class="time-slot py-2 px-1 text-center font-label-sm text-label-sm rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="selectTime(this)" type="button">05:30 PM</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-2xs">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-2xs" for="patientNotes">
+<span class="material-symbols-outlined text-primary text-[20px]">edit_note</span>
+        Specific Symptoms &amp; Notes
+        <span class="text-on-surface-variant font-label-sm text-label-sm font-normal">(Optional)</span>
+</label>
+<p class="font-caption text-caption text-on-surface-variant">Describe pain areas, sensitivity triggers, or insurance provider.</p>
+<textarea class="w-full p-3 bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:shadow-md transition-all resize-none" id="patientNotes" placeholder="e.g. Mild sensitivity in upper right molar when drinking cold fluids. Delta Dental Premier network." rows="3"></textarea>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm">100% Confidential &amp; HIPAA Compliant</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-label-sm text-label-sm">Free Cancellation up to 24h prior</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">mark_chat_read</span>
+<span class="font-label-sm text-label-sm">Instant SMS &amp; Email Calendar Pass</span>
+</div>
+</div>
+<button class="w-full py-4 px-space-md bg-gradient-to-r from-primary to-secondary text-on-primary font-title-sm text-title-sm rounded-full shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-space-2xs" onclick="showBookingToast()" type="submit">
+<span>Confirm &amp; Submit Appointment</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<div class="px-space-md mt-space-xs mb-space-lg">
+<div class="bg-error-container text-on-error-container p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">e911_emergency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-error font-bold">Severe Dental Pain Right Now?</span>
+<p class="font-body-sm text-body-sm mt-0.5">Call our 24/7 Dental Emergency Hotline immediately at <a class="underline font-semibold" href="tel:18005550199">(800) 555-0199</a> for same-day relief triage.</p>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 left-4 right-4 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="bookingToast">
+<div class="bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-2xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[28px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm">Appointment Requested!</span>
+<span class="font-caption text-caption opacity-90">Dr. review in progress. SMS pass dispatched.</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectDate(element) {
+    document.querySelectorAll('.date-chip').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      btn.classList.add('bg-surface-container-low', 'text-on-surface');
+      const spans = btn.querySelectorAll('span');
+      if (spans.length >= 3) {
+        spans[0].classList.add('text-on-surface-variant');
+        spans[0].classList.remove('opacity-90');
+        spans[2].classList.add('text-on-surface-variant');
+        spans[2].classList.remove('opacity-90');
+      }
+    });
+
+    element.classList.remove('bg-surface-container-low', 'text-on-surface');
+    element.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    const activeSpans = element.querySelectorAll('span');
+    if (activeSpans.length >= 3) {
+      activeSpans[0].classList.remove('text-on-surface-variant');
+      activeSpans[0].classList.add('opacity-90');
+      activeSpans[2].classList.remove('text-on-surface-variant');
+      activeSpans[2].classList.add('opacity-90');
+    }
+  }
+
+  function selectTime(element) {
+    document.querySelectorAll('.time-slot').forEach(btn => {
+      btn.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'shadow-sm');
+      btn.classList.add('bg-surface-container-low', 'text-on-surface');
+    });
+
+    element.classList.remove('bg-surface-container-low', 'text-on-surface');
+    element.classList.add('bg-secondary-container', 'text-on-secondary-container', 'shadow-sm');
+  }
+
+  function showBookingToast() {
+    const toast = document.getElementById('bookingToast');
+    if (!toast) return;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3500);
+  }
+
+  // Auto-select service if passed in URL query param
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      const select = document.getElementById('serviceSelect');
+      if (select) select.value = serviceParam;
+    }
+  });
+</script></main></body></html>
